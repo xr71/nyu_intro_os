@@ -13,8 +13,18 @@ int main(int argc, char** argv)
     }
 
     int year = atoi(argv[1]);
+    if (year % 400 == 0)
+    {
+        printf("%d is a leap year\n", year);
+        return 0;
+    }
 
-    printf("%d\n", year);
+    if (year % 4 == 0 && year % 100 != 0)
+    {
+        printf("%d is a leap year\n", year);
+        return 0;
+    }
 
+    printf("%d is not a leap year\n", year);
     return 0;
 }
